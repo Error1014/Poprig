@@ -23,8 +23,50 @@
 
             </ComboBox>
         </DockPanel>
-        <ListView Grid.Row="1">
-            
+        <ListView x:Name="ListViewAgent" Grid.Row="1" ScrollViewer.HorizontalScrollBarVisibility="Disabled"  HorizontalAlignment="Center" Width="auto">
+            <ListView.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <StackPanel Orientation="Vertical"></StackPanel>
+                </ItemsPanelTemplate>
+            </ListView.ItemsPanel>
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="100"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="100"/>
+                        </Grid.ColumnDefinitions>
+                        <Image Grid.Column="0" Margin="10">
+                            <Image.Source>
+                                <Binding Path="LogoPath">
+                                    <Binding.TargetNullValue>
+                                        <ImageSource>/Resources/picture.png</ImageSource>
+                                    </Binding.TargetNullValue>
+                                </Binding>
+                            </Image.Source>
+                        </Image>
+                        <StackPanel Grid.Column="1" HorizontalAlignment="Center" Margin="10">
+                            <TextBlock>
+                                <Run Text="{Binding TypeAgent.Title}"/>
+                                <Run Text="|"/>
+                                <Run Text="{Binding Title}"/>
+                            </TextBlock>
+                            <TextBlock>
+                                <Run />
+                                <Run Text=" продаж за год"/>
+                            </TextBlock>
+                            <TextBlock Text="{Binding Phone}"/>
+                            <TextBlock>
+                                <Run Text="Приоритетность: "/>
+                                <Run Text="{Binding Prioritet}"/>
+                            </TextBlock>
+                        </StackPanel>
+                        <TextBlock Grid.Column="2" Text="скидка" HorizontalAlignment="Right" Margin="10"/>
+                    </Grid>
+                    
+                </DataTemplate>
+            </ListView.ItemTemplate>
         </ListView>
         
     </Grid>

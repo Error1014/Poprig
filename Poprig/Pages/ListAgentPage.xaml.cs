@@ -23,6 +23,12 @@ namespace Poprig.Pages
         public ListAgentPage()
         {
             InitializeComponent();
+            var dataAgent = MyDB_41_Derbin_2Entities.GetContext().Agent.ToList();
+            foreach (var item in dataAgent)
+            {
+                item.LogoPath = "/Resources/AgentLogo/"+item.LogoPath;
+            }
+            ListViewAgent.ItemsSource = dataAgent;
         }
     }
 }

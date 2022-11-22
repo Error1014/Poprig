@@ -34,6 +34,9 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>Resources\Попрыженок.ico</ApplicationIcon>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
@@ -44,6 +47,7 @@
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Security" />
     <Reference Include="System.Xml" />
@@ -134,6 +138,7 @@
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EntityDeploy Include="BDModel.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
@@ -162,6 +167,139 @@
       <DependentUpon>BDModel.edmx</DependentUpon>
       <LastGenOutput>BDModel.cs</LastGenOutput>
     </Content>
+    <Resource Include="Resources\picture.png" />
+    <Resource Include="Resources\Попрыженок.png" />
+    <Resource Include="Resources\Попрыженок.ico" />
+    <Resource Include="Resources\AgentLogo\agent_130.png" />
+    <Resource Include="Resources\AgentLogo\agent_129.png" />
+    <Resource Include="Resources\AgentLogo\agent_128.png" />
+    <Resource Include="Resources\AgentLogo\agent_127.png" />
+    <Resource Include="Resources\AgentLogo\agent_126.png" />
+    <Resource Include="Resources\AgentLogo\agent_125.png" />
+    <Resource Include="Resources\AgentLogo\agent_124.png" />
+    <Resource Include="Resources\AgentLogo\agent_123.png" />
+    <Resource Include="Resources\AgentLogo\agent_122.png" />
+    <Resource Include="Resources\AgentLogo\agent_121.png" />
+    <Resource Include="Resources\AgentLogo\agent_120.png" />
+    <Resource Include="Resources\AgentLogo\agent_119.png" />
+    <Resource Include="Resources\AgentLogo\agent_118.png" />
+    <Resource Include="Resources\AgentLogo\agent_117.png" />
+    <Resource Include="Resources\AgentLogo\agent_116.png" />
+    <Resource Include="Resources\AgentLogo\agent_115.png" />
+    <Resource Include="Resources\AgentLogo\agent_114.png" />
+    <Resource Include="Resources\AgentLogo\agent_113.png" />
+    <Resource Include="Resources\AgentLogo\agent_112.png" />
+    <Resource Include="Resources\AgentLogo\agent_111.png" />
+    <Resource Include="Resources\AgentLogo\agent_110.png" />
+    <Resource Include="Resources\AgentLogo\agent_109.png" />
+    <Resource Include="Resources\AgentLogo\agent_108.png" />
+    <Resource Include="Resources\AgentLogo\agent_107.png" />
+    <Resource Include="Resources\AgentLogo\agent_106.png" />
+    <Resource Include="Resources\AgentLogo\agent_105.png" />
+    <Resource Include="Resources\AgentLogo\agent_104.png" />
+    <Resource Include="Resources\AgentLogo\agent_103.png" />
+    <Resource Include="Resources\AgentLogo\agent_102.png" />
+    <Resource Include="Resources\AgentLogo\agent_101.png" />
+    <Resource Include="Resources\AgentLogo\agent_100.png" />
+    <Resource Include="Resources\AgentLogo\agent_99.png" />
+    <Resource Include="Resources\AgentLogo\agent_98.png" />
+    <Resource Include="Resources\AgentLogo\agent_97.png" />
+    <Resource Include="Resources\AgentLogo\agent_96.png" />
+    <Resource Include="Resources\AgentLogo\agent_95.png" />
+    <Resource Include="Resources\AgentLogo\agent_94.png" />
+    <Resource Include="Resources\AgentLogo\agent_93.png" />
+    <Resource Include="Resources\AgentLogo\agent_92.png" />
+    <Resource Include="Resources\AgentLogo\agent_91.png" />
+    <Resource Include="Resources\AgentLogo\agent_90.png" />
+    <Resource Include="Resources\AgentLogo\agent_89.png" />
+    <Resource Include="Resources\AgentLogo\agent_88.png" />
+    <Resource Include="Resources\AgentLogo\agent_87.png" />
+    <Resource Include="Resources\AgentLogo\agent_86.png" />
+    <Resource Include="Resources\AgentLogo\agent_85.png" />
+    <Resource Include="Resources\AgentLogo\agent_84.png" />
+    <Resource Include="Resources\AgentLogo\agent_83.png" />
+    <Resource Include="Resources\AgentLogo\agent_82.png" />
+    <Resource Include="Resources\AgentLogo\agent_81.png" />
+    <Resource Include="Resources\AgentLogo\agent_80.png" />
+    <Resource Include="Resources\AgentLogo\agent_79.png" />
+    <Resource Include="Resources\AgentLogo\agent_78.png" />
+    <Resource Include="Resources\AgentLogo\agent_77.png" />
+    <Resource Include="Resources\AgentLogo\agent_76.png" />
+    <Resource Include="Resources\AgentLogo\agent_75.png" />
+    <Resource Include="Resources\AgentLogo\agent_74.png" />
+    <Resource Include="Resources\AgentLogo\agent_73.png" />
+    <Resource Include="Resources\AgentLogo\agent_72.png" />
+    <Resource Include="Resources\AgentLogo\agent_71.png" />
+    <Resource Include="Resources\AgentLogo\agent_70.png" />
+    <Resource Include="Resources\AgentLogo\agent_69.png" />
+    <Resource Include="Resources\AgentLogo\agent_68.png" />
+    <Resource Include="Resources\AgentLogo\agent_67.png" />
+    <Resource Include="Resources\AgentLogo\agent_66.png" />
+    <Resource Include="Resources\AgentLogo\agent_65.png" />
+    <Resource Include="Resources\AgentLogo\agent_64.png" />
+    <Resource Include="Resources\AgentLogo\agent_63.png" />
+    <Resource Include="Resources\AgentLogo\agent_62.png" />
+    <Resource Include="Resources\AgentLogo\agent_61.png" />
+    <Resource Include="Resources\AgentLogo\agent_60.png" />
+    <Resource Include="Resources\AgentLogo\agent_59.png" />
+    <Resource Include="Resources\AgentLogo\agent_58.png" />
+    <Resource Include="Resources\AgentLogo\agent_57.png" />
+    <Resource Include="Resources\AgentLogo\agent_56.png" />
+    <Resource Include="Resources\AgentLogo\agent_55.png" />
+    <Resource Include="Resources\AgentLogo\agent_54.png" />
+    <Resource Include="Resources\AgentLogo\agent_53.png" />
+    <Resource Include="Resources\AgentLogo\agent_52.png" />
+    <Resource Include="Resources\AgentLogo\agent_51.png" />
+    <Resource Include="Resources\AgentLogo\agent_50.png" />
+    <Resource Include="Resources\AgentLogo\agent_49.png" />
+    <Resource Include="Resources\AgentLogo\agent_48.png" />
+    <Resource Include="Resources\AgentLogo\agent_47.png" />
+    <Resource Include="Resources\AgentLogo\agent_46.png" />
+    <Resource Include="Resources\AgentLogo\agent_45.png" />
+    <Resource Include="Resources\AgentLogo\agent_44.png" />
+    <Resource Include="Resources\AgentLogo\agent_43.png" />
+    <Resource Include="Resources\AgentLogo\agent_42.png" />
+    <Resource Include="Resources\AgentLogo\agent_41.png" />
+    <Resource Include="Resources\AgentLogo\agent_40.png" />
+    <Resource Include="Resources\AgentLogo\agent_39.png" />
+    <Resource Include="Resources\AgentLogo\agent_38.png" />
+    <Resource Include="Resources\AgentLogo\agent_37.png" />
+    <Resource Include="Resources\AgentLogo\agent_36.png" />
+    <Resource Include="Resources\AgentLogo\agent_35.png" />
+    <Resource Include="Resources\AgentLogo\agent_34.png" />
+    <Resource Include="Resources\AgentLogo\agent_33.png" />
+    <Resource Include="Resources\AgentLogo\agent_32.png" />
+    <Resource Include="Resources\AgentLogo\agent_31.png" />
+    <Resource Include="Resources\AgentLogo\agent_30.png" />
+    <Resource Include="Resources\AgentLogo\agent_29.png" />
+    <Resource Include="Resources\AgentLogo\agent_28.png" />
+    <Resource Include="Resources\AgentLogo\agent_27.png" />
+    <Resource Include="Resources\AgentLogo\agent_26.png" />
+    <Resource Include="Resources\AgentLogo\agent_25.png" />
+    <Resource Include="Resources\AgentLogo\agent_24.png" />
+    <Resource Include="Resources\AgentLogo\agent_23.png" />
+    <Resource Include="Resources\AgentLogo\agent_22.png" />
+    <Resource Include="Resources\AgentLogo\agent_21.png" />
+    <Resource Include="Resources\AgentLogo\agent_20.png" />
+    <Resource Include="Resources\AgentLogo\agent_19.png" />
+    <Resource Include="Resources\AgentLogo\agent_18.png" />
+    <Resource Include="Resources\AgentLogo\agent_17.png" />
+    <Resource Include="Resources\AgentLogo\agent_16.png" />
+    <Resource Include="Resources\AgentLogo\agent_15.png" />
+    <Resource Include="Resources\AgentLogo\agent_14.png" />
+    <Resource Include="Resources\AgentLogo\agent_13.png" />
+    <Resource Include="Resources\AgentLogo\agent_12.png" />
+    <Resource Include="Resources\AgentLogo\agent_11.png" />
+    <Resource Include="Resources\AgentLogo\agent_10.png" />
+    <Resource Include="Resources\AgentLogo\agent_9.png" />
+    <Resource Include="Resources\AgentLogo\agent_8.png" />
+    <Resource Include="Resources\AgentLogo\agent_7.png" />
+    <Resource Include="Resources\AgentLogo\agent_6.png" />
+    <Resource Include="Resources\AgentLogo\agent_5.png" />
+    <Resource Include="Resources\AgentLogo\agent_4.png" />
+    <Resource Include="Resources\AgentLogo\agent_3.png" />
+    <Resource Include="Resources\AgentLogo\agent_2.png" />
+    <Resource Include="Resources\AgentLogo\agent_1.png" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
