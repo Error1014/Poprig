@@ -4,6 +4,14 @@
              xmlns:local="clr-namespace:Poprig"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
-         
+        <Style TargetType="TextBlock">
+            <Setter Property="TextBlock.FontFamily" Value="Comic Sans MS"/>
+        </Style>
+        <Style TargetType="TextBox">
+            <Setter Property="TextBox.FontFamily" Value="Comic Sans MS"/>
+        </Style>
+        <Style TargetType="Button">
+            <Setter Property="Button.FontFamily" Value="Comic Sans MS"/>
+        </Style>
     </Application.Resources>
 </Application>
