@@ -40,6 +40,7 @@ namespace Poprig.Pages
             }
             GetPartList();
             ListViewAgent.ItemsSource = GetValueDataPage();
+            UpdateNumPagesNavigate();
         }
         private void GetPartList()
         {
@@ -112,20 +113,43 @@ namespace Poprig.Pages
 
         private void UpdateNumPagesNavigate()
         {
-            if (numPages +3<valuePages)
+            List<Run> runs = new List<Run>();
+            runs.Add(NumPage1);
+            runs.Add(NumPage2);
+            runs.Add(NumPage3);
+            runs.Add(NumPage4);
+            if (numPages +3 < valuePages)
             {
-                NumPage1.Text = (numPages).ToString();
-                NumPage2.Text = (numPages + 1).ToString();
-                NumPage3.Text = (numPages + 2).ToString();
-                NumPage4.Text = (numPages + 3).ToString();
+                for (int i = 0; i < runs.Count; i++)
+                {
+                    runs[i].Text = (numPages+i).ToString();
+                    if (runs[i].Text==numPages.ToString())
+                    {
+                        runs[i].TextDecorations = TextDecorations.Underline;
+                    }
+                    else
+                    {
+                        runs[i].TextDecorations = null;
+                    }
+                }
             }
             else
             {
-                NumPage1.Text = (valuePages-3).ToString();
-                NumPage2.Text = (valuePages-2).ToString();
-                NumPage3.Text = (valuePages-1).ToString();
-                NumPage4.Text = (valuePages).ToString();
+                for (int i = 0; i < runs.Count; i++)
+                {
+                    runs[i].Text = (valuePages -(3 - i)).ToString();
+                    if (runs[i].Text == numPages.ToString())
+                    {
+                        runs[i].TextDecorations = TextDecorations.Underline;
+                    }
+                    else
+                    {
+                        runs[i].TextDecorations = null;
+                    }
+                }
             }
+
+
         }
     }
 }
