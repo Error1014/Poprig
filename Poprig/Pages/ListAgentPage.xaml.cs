@@ -13,17 +13,16 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace Poprig
+namespace Poprig.Pages
 {
     /// <summary>
-    /// Логика взаимодействия для MainWindow.xaml
+    /// Логика взаимодействия для ListAgentPage.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class ListAgentPage : Page
     {
-        public MainWindow()
+        public ListAgentPage()
         {
             InitializeComponent();
-            MainFrame.Content = new Pages.ListAgentPage();
         }
     }
 }
