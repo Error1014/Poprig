@@ -39,7 +39,7 @@ namespace Poprig.Pages
             {
                 item.LogoPath = "/Resources/AgentLogo/"+item.LogoPath;
                 int? d = MyDB_41_Derbin_2Entities.GetContext().Sales
-                    .Where(x=>x.AgentID==item.ID)
+                    .Where(x=>x.AgentID==item.ID /* && DateTime.UtcNow - x.Date.Value<TimeSpan.FromDays(365)*/)
                     .Sum(s=>s.Value);
                 item.SalesOnYear = (int)(d == null ? 0 : d);
             }
@@ -78,19 +78,23 @@ namespace Poprig.Pages
         {
             foreach (var item in agents)
             {
-                if (item.SalesOnYear<10000)
+                int? sales = MyDB_41_Derbin_2Entities.GetContext().Sales
+                    .Where(x => x.AgentID == item.ID)
+                    .Sum(s => s.Value);
+                sales = (int)(sales == null ? 0 : sales);
+                if (sales < 10000)
                 {
                     item.Skidka = 0;
                 }
-                else if (item.SalesOnYear < 50000)
+                else if (sales < 50000)
                 {
                     item.Skidka = 5;
                 }
-                else if (item.SalesOnYear < 150000)
+                else if (sales < 150000)
                 {
                     item.Skidka = 10;
                 }
-                else if (item.SalesOnYear < 500000)
+                else if (sales < 500000)
                 {
                     item.Skidka = 20;
                 }
