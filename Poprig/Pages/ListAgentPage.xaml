@@ -31,38 +31,41 @@
             </ListView.ItemsPanel>
             <ListView.ItemTemplate>
                 <DataTemplate>
-                    <Grid Background="#F9969E">
+                    <Grid MinHeight="100" Height="170">
                         <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="100"/>
+                            <ColumnDefinition Width="170"/>
                             <ColumnDefinition Width="*"/>
                             <ColumnDefinition Width="100"/>
                         </Grid.ColumnDefinitions>
-                        <Image Grid.Column="0" Margin="10">
-                            <Image.Source>
-                                <Binding Path="LogoPath">
-                                    <Binding.TargetNullValue>
-                                        <ImageSource>/Resources/picture.png</ImageSource>
-                                    </Binding.TargetNullValue>
-                                </Binding>
-                            </Image.Source>
-                        </Image>
-                        <StackPanel Grid.Column="1" HorizontalAlignment="Center" Margin="10">
-                            <TextBlock>
+                        <StackPanel Background="#F9969E">
+                            <Image Grid.Column="0" Width="130" Height="130" Margin="20" HorizontalAlignment="Left">
+                                <Image.Source>
+                                    <Binding Path="LogoPath">
+                                        <Binding.TargetNullValue>
+                                            <ImageSource>/Resources/picture.png</ImageSource>
+                                        </Binding.TargetNullValue>
+                                    </Binding>
+                                </Image.Source>
+                            </Image>
+                        </StackPanel>
+                        
+                        <StackPanel  Grid.Column="1" HorizontalAlignment="Center" Margin="10" Width="500" >
+                            <TextBlock FontSize="20">
                                 <Run Text="{Binding TypeAgent.Title}"/>
                                 <Run Text="|"/>
                                 <Run Text="{Binding Title}"/>
                             </TextBlock>
-                            <TextBlock>
-                                <Run />
+                            <TextBlock FontSize="15">
+                                <Run Text="{Binding SalesOnYear}"/>
                                 <Run Text=" продаж за год"/>
                             </TextBlock>
-                            <TextBlock Text="{Binding Phone}"/>
+                            <TextBlock FontSize="15" Text="{Binding Phone}"/>
                             <TextBlock>
                                 <Run Text="Приоритетность: "/>
                                 <Run Text="{Binding Prioritet}"/>
                             </TextBlock>
                         </StackPanel>
-                        <TextBlock Grid.Column="2" Text="{Binding ID}" HorizontalAlignment="Right" Margin="10"/>
+                        <TextBlock  Grid.Column="2" FontSize="20" VerticalAlignment="Center" HorizontalAlignment="Center" Text="{Binding ID}" Margin="10"/>
                     </Grid>
                     
                 </DataTemplate>

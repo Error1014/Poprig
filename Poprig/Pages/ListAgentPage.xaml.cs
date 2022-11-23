@@ -37,6 +37,7 @@ namespace Poprig.Pages
             foreach (var item in agents)
             {
                 item.LogoPath = "/Resources/AgentLogo/"+item.LogoPath;
+                item.SalesOnYear = MyDB_41_Derbin_2Entities.GetContext().Sales.Where(x=>x.AgentID==item.ID).Count();
             }
             GetPartList();
             ListViewAgent.ItemsSource = GetValueDataPage();

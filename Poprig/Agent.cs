@@ -31,7 +31,10 @@ namespace Poprig
         public string ContactPerson { get; set; }
         public string INN { get; set; }
         public string KPP { get; set; }
-    
+
+        public int SalesOnYear { get; set; }
+        public float Skidka { get; set; }
+
         public virtual TypeAgent TypeAgent { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Sales> Sales { get; set; }
