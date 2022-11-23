@@ -45,21 +45,6 @@ namespace Poprig.Pages
         }
         private void GetPartList()
         {
-            //int num = 0;
-            //for (int i = 0; i < agents.Count; i++)
-            //{
-            //    List<Agent> list = new List<Agent>(); 
-            //    for (int j = 0; j < valueAgentInPage; j++)
-            //    {
-            //        if (num==100)
-            //        {
-            //            return;
-            //        }
-            //        list.Add(agents[num]);
-            //        num++;
-            //    }
-            //    listAgentForPages.Add(list);
-            //}
             List<Agent> list = new List<Agent>();
             int num = 0;
             foreach (var item in agents)

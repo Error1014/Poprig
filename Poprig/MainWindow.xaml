@@ -8,6 +8,14 @@
         Title="MainWindow" Height="450" Width="800"
         MinHeight="450" MinWidth="800">
     <Grid>
-        <Frame x:Name="MainFrame"></Frame>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <DockPanel>
+            <Image Source="/Resources/Попрыженок.png" HorizontalAlignment="Left" Margin="5"/>
+            <TextBlock Text="Попрыжёнок" VerticalAlignment="Center" FontSize="20"></TextBlock>
+        </DockPanel>
+        <Frame Grid.Row="1" x:Name="MainFrame"></Frame>
     </Grid>
 </Window>
