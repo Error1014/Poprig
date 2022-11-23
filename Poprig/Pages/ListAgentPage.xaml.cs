@@ -34,11 +34,16 @@ namespace Poprig.Pages
                 agents.Add(item);
             }
             valuePages = agents.Count/ valueAgentInPage + (agents.Count% valueAgentInPage == 0 ? 0:1);//считаем количество страниц
+            ///Продажи за год
             foreach (var item in agents)
             {
                 item.LogoPath = "/Resources/AgentLogo/"+item.LogoPath;
-                item.SalesOnYear = MyDB_41_Derbin_2Entities.GetContext().Sales.Where(x=>x.AgentID==item.ID).Count();
+                int? d = MyDB_41_Derbin_2Entities.GetContext().Sales
+                    .Where(x=>x.AgentID==item.ID)
+                    .Sum(s=>s.Value);
+                item.SalesOnYear = (int)(d == null ? 0 : d);
             }
+            GetSkidka();
             GetPartList();
             ListViewAgent.ItemsSource = GetValueDataPage();
             UpdateNumPagesNavigate();
@@ -67,6 +72,34 @@ namespace Poprig.Pages
             List<Agent> list = new List<Agent>();
             list = listAgentForPages[numPages - 1];
             return list;
+        }
+
+        private List<Agent> GetSkidka()
+        {
+            foreach (var item in agents)
+            {
+                if (item.SalesOnYear<10000)
+                {
+                    item.Skidka = 0;
+                }
+                else if (item.SalesOnYear < 50000)
+                {
+                    item.Skidka = 5;
+                }
+                else if (item.SalesOnYear < 150000)
+                {
+                    item.Skidka = 10;
+                }
+                else if (item.SalesOnYear < 500000)
+                {
+                    item.Skidka = 20;
+                }
+                else
+                {
+                    item.Skidka = 25;
+                }
+            }
+            return agents;
         }
 
 
