@@ -76,6 +76,9 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>BDModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="Pages\AddEditAgentPage.xaml.cs">
+      <DependentUpon>AddEditAgentPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Product.cs">
       <DependentUpon>BDModel.tt</DependentUpon>
     </Compile>
@@ -113,6 +116,10 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="Pages\AddEditAgentPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Pages\ListAgentPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

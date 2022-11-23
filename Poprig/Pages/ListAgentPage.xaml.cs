@@ -174,5 +174,10 @@ namespace Poprig.Pages
 
 
         }
+
+        private void AddNewAgenr(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

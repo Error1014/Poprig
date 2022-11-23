@@ -16,12 +16,13 @@
         </Grid.RowDefinitions>
         <DockPanel>
             <TextBox Width="200" HorizontalAlignment="Left" Margin="10" Text="Введите текст для поиска"/>
-            <ComboBox Width="300" HorizontalAlignment="Center" Margin="10">
+            <ComboBox Width="200" HorizontalAlignment="Center" Margin="10">
                 
             </ComboBox>
-            <ComboBox Width="200" HorizontalAlignment="Right" Margin="10">
+            <ComboBox Width="200" Margin="10">
 
             </ComboBox>
+            <Button Content="Добавить агента" Margin="10"  HorizontalAlignment="Right" MaxWidth="200" Background="#43DCFE" Click="AddNewAgenr"/>
         </DockPanel>
         <ListView x:Name="ListViewAgent" Grid.Row="1" ScrollViewer.HorizontalScrollBarVisibility="Disabled"  HorizontalAlignment="Center" Width="auto">
             <ListView.ItemsPanel>

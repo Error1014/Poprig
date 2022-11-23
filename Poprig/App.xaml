@@ -13,6 +13,15 @@
         <Style TargetType="Button">
             <Setter Property="Button.FontFamily" Value="Comic Sans MS"/>
         </Style>
-        
+        <Style x:Key="EnterData">
+            <Setter Property="TextBlock.FontSize" Value="25"/>
+            <Setter Property="TextBox.FontSize" Value="25"/>
+            <Setter Property="ComboBox.FontSize" Value="25"/>
+            <Setter Property="TextBlock.FontSize" Value="25"/>
+            <Setter Property="TextBlock.Height" Value="40"/>
+            <Setter Property="TextBox.Height" Value="40"/>
+            <Setter Property="ComboBox.Height" Value="40"/>
+
+        </Style>
     </Application.Resources>
 </Application>
