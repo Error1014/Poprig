@@ -32,7 +32,7 @@
             </ListView.ItemsPanel>
             <ListView.ItemTemplate>
                 <DataTemplate>
-                    <Grid MinHeight="100" Height="170">
+                    <Grid MinHeight="100" Height="170" PreviewMouseLeftButtonDown="Grid_PreviewMouseLeftButtonDown">
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="170"/>
                             <ColumnDefinition Width="*"/>

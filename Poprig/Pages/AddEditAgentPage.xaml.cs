@@ -20,9 +20,58 @@ namespace Poprig.Pages
     /// </summary>
     public partial class AddEditAgentPage : Page
     {
-        public AddEditAgentPage()
+        Agent agent = new Agent();
+        public AddEditAgentPage(Agent SelectAgent)
         {
             InitializeComponent();
+            if (SelectAgent!=null)
+            {
+                agent = SelectAgent;
+                ShowDataAgent();
+            }
         }
+        private void ShowDataAgent()
+        {
+            TitleBox.Text = agent.Title;
+            PrioritetBox.Text = agent.Prioritet.ToString();
+            AdresBox.Text = agent.UrAdres;
+            DirectorBox.Text = agent.ContactPerson;
+            INNBox.Text = agent.INN;
+            KPPBox.Text = agent.KPP;
+            PhoneBox.Text = agent.Phone;
+            EmailBox.Text = agent.Email;
+
+        }
+        private void SaveResult(object sender, RoutedEventArgs e)
+        {
+            
+            agent.Title = TitleBox.Text;
+            //agent.TypeAgent
+            //agent.Logo
+            agent.Prioritet = int.Parse(PrioritetBox.Text);
+            agent.UrAdres = AdresBox.Text;
+            agent.ContactPerson = DirectorBox.Text;
+            agent.INN = INNBox.Text;
+            agent.KPP = KPPBox.Text;
+            agent.Phone = PhoneBox.Text;
+            agent.Email = EmailBox.Text;
+
+            try
+            {
+                MyDB_41_Derbin_2Entities.Context.Agent.Add(agent);
+                MyDB_41_Derbin_2Entities.Context.SaveChanges();
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Error");
+            }
+            MessageBox.Show("Save");
+        }
+
+        private void TextInputInt(object sender, TextCompositionEventArgs e)
+        {
+            e.Handled = "0123456789 ,".IndexOf(e.Text) < 0;
+        }
+    
     }
 }

@@ -177,7 +177,12 @@ namespace Poprig.Pages
 
         private void AddNewAgenr(object sender, RoutedEventArgs e)
         {
+            MainWindow.FrameMainWindow.Content = new Pages.AddEditAgentPage(null);
+        }
 
+        private void Grid_PreviewMouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            MainWindow.FrameMainWindow.Content = new Pages.AddEditAgentPage((sender as Grid).DataContext as Agent);
         }
     }
 }

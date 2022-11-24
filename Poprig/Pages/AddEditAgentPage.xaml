@@ -30,17 +30,17 @@
             <TextBlock Style="{StaticResource EnterData}"  Text="Email"/>
         </StackPanel>
         <StackPanel Grid.Column="1"  Margin="10,10,10,10">
-            <TextBox Style="{StaticResource EnterData}" Text="EEE"/>
-            <ComboBox Style="{StaticResource EnterData}" Text="EEE"/>
-            <TextBox Style="{StaticResource EnterData}" Text="EEE"/>
-            <TextBox Style="{StaticResource EnterData}" Text="EEE"/>
-            <TextBox Style="{StaticResource EnterData}" Text="EEE"/>
-            <TextBox Style="{StaticResource EnterData}" Text="EEE"/>
-            <TextBox Style="{StaticResource EnterData}" Text="EEE"/>
-            <TextBox Style="{StaticResource EnterData}" Text="EEE"/>
-            <TextBox Style="{StaticResource EnterData}" Text="EEE"/>
-            <TextBox Style="{StaticResource EnterData}" Text="EEE"/>
+            <TextBox x:Name="TitleBox" Style="{StaticResource EnterData}" />
+            <ComboBox x:Name="TypeBox"  Style="{StaticResource EnterData}" />
+            <TextBox x:Name="PrioritetBox" PreviewTextInput="TextInputInt"  Style="{StaticResource EnterData}" />
+            <TextBox x:Name="LogoBox"  Style="{StaticResource EnterData}" />
+            <TextBox x:Name="AdresBox" Style="{StaticResource EnterData}" />
+            <TextBox x:Name="INNBox" PreviewTextInput="TextInputInt" Style="{StaticResource EnterData}" />
+            <TextBox x:Name="KPPBox" PreviewTextInput="TextInputInt" Style="{StaticResource EnterData}" />
+            <TextBox x:Name="DirectorBox" Style="{StaticResource EnterData}" />
+            <TextBox x:Name="PhoneBox" PreviewTextInput="TextInputInt" Style="{StaticResource EnterData}" />
+            <TextBox x:Name="EmailBox" Style="{StaticResource EnterData}" />
         </StackPanel>
-        <Button Grid.ColumnSpan="2" Grid.Row="1" Width="200" Content="Сохранить" Background="#43DCFE"/>
+        <Button Grid.ColumnSpan="2" Grid.Row="1" Width="200" Content="Сохранить" Click="SaveResult" Background="#43DCFE"/>
     </Grid>
 </Page>

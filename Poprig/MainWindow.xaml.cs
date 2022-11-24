@@ -20,10 +20,12 @@ namespace Poprig
     /// </summary>
     public partial class MainWindow : Window
     {
+        public static Frame FrameMainWindow;
         public MainWindow()
         {
             InitializeComponent();
             MainFrame.Content = new Pages.ListAgentPage();
+            FrameMainWindow = MainFrame;
         }
     }
 }
