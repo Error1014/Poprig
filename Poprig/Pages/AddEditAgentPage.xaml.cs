@@ -21,6 +21,7 @@ namespace Poprig.Pages
     public partial class AddEditAgentPage : Page
     {
         Agent agent = new Agent();
+        private bool isEdit = false;
         public AddEditAgentPage(Agent SelectAgent)
         {
             InitializeComponent();
@@ -28,6 +29,7 @@ namespace Poprig.Pages
             {
                 agent = SelectAgent;
                 ShowDataAgent();
+                isEdit = true;
             }
         }
         private void ShowDataAgent()
@@ -48,7 +50,7 @@ namespace Poprig.Pages
             agent.Title = TitleBox.Text;
             //agent.TypeAgent
             //agent.Logo
-            agent.Prioritet = int.Parse(PrioritetBox.Text);
+            agent.Prioritet = PrioritetBox.Text == ""? 0: int.Parse(PrioritetBox.Text);
             agent.UrAdres = AdresBox.Text;
             agent.ContactPerson = DirectorBox.Text;
             agent.INN = INNBox.Text;
@@ -58,14 +60,29 @@ namespace Poprig.Pages
 
             try
             {
-                MyDB_41_Derbin_2Entities.Context.Agent.Add(agent);
+                if (isEdit == false)
+                {
+                    MyDB_41_Derbin_2Entities.Context.Agent.Add(agent);
+                }
+
                 MyDB_41_Derbin_2Entities.Context.SaveChanges();
             }
             catch (Exception)
             {
                 MessageBox.Show("Error");
             }
-            MessageBox.Show("Save");
+            MainWindow.FrameMainWindow.Content = new Pages.ListAgentPage();
+        }
+        private void DeleteResult(object sender, RoutedEventArgs e)
+        {
+
+            if (agent!=null)
+            {
+                MyDB_41_Derbin_2Entities.Context.Agent.Remove(agent);
+            }
+            MyDB_41_Derbin_2Entities.Context.SaveChanges();
+            MainWindow.FrameMainWindow.Content=new Pages.ListAgentPage();
+
         }
 
         private void TextInputInt(object sender, TextCompositionEventArgs e)
