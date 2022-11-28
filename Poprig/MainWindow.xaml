@@ -16,6 +16,6 @@
             <Image Source="/Resources/Попрыженок.png" HorizontalAlignment="Left" Margin="5"/>
             <TextBlock Text="Попрыжёнок" VerticalAlignment="Center" FontSize="20"></TextBlock>
         </DockPanel>
-        <Frame Grid.Row="1" x:Name="MainFrame"></Frame>
+        <Frame NavigationUIVisibility="Hidden" Grid.Row="1" x:Name="MainFrame"></Frame>
     </Grid>
 </Window>

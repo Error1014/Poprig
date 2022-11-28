@@ -44,9 +44,10 @@
             <TextBox x:Name="PhoneBox" PreviewTextInput="TextInputInt" Style="{StaticResource EnterData}" />
             <TextBox x:Name="EmailBox" Style="{StaticResource EnterData}" />
         </StackPanel>
-        <DockPanel Grid.Row="1" Grid.Column="1">
-            <Button Width="200" Content="Удалить" Click="DeleteResult" Background="#43DCFE" Grid.Column="1" />
-            <Button Width="200" Content="Сохранить" Click="SaveResult" Background="#43DCFE" Grid.Column="1"/>
+        <DockPanel Grid.Row="1" Grid.ColumnSpan="2" HorizontalAlignment="Center">
+            <Button Style="{StaticResource AccentButton}" Content="Назад" Click="NavigateBack"/>
+            <Button Style="{StaticResource AccentButton}" Content="Удалить" Click="DeleteResult"/>
+            <Button Style="{StaticResource AccentButton}" Content="Сохранить" Click="SaveResult"/>
         </DockPanel>
         
     </Grid>

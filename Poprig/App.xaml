@@ -23,5 +23,10 @@
             <Setter Property="ComboBox.Height" Value="40"/>
 
         </Style>
+        <Style x:Key="AccentButton">
+            <Setter Property="Button.Background" Value="#43DCFE"/>
+            <Setter Property="Button.Width" Value="200"/>
+            <Setter Property="Button.Margin" Value="10,0,10,0"/>
+        </Style>
     </Application.Resources>
 </Application>

@@ -42,6 +42,8 @@ namespace Poprig.Pages
             TitleBox.Text = agent.Title;
             PrioritetBox.Text = agent.Prioritet.ToString();
             AdresBox.Text = agent.UrAdres;
+            LogoBox.Source = new BitmapImage(new Uri(agent.AllPathLogo, UriKind.Relative)) { CreateOptions = BitmapCreateOptions.IgnoreImageCache };
+
             DirectorBox.Text = agent.ContactPerson;
             INNBox.Text = agent.INN;
             KPPBox.Text = agent.KPP;
@@ -54,7 +56,7 @@ namespace Poprig.Pages
             
             agent.Title = TitleBox.Text;
             agent.TypeID = (int)TypeBox.SelectedValue;
-            //agent.Logo
+            agent.LogoPath = LogoBox.Source.ToString();
             agent.Prioritet = PrioritetBox.Text == ""? 0: int.Parse(PrioritetBox.Text);
             agent.UrAdres = AdresBox.Text;
             agent.ContactPerson = DirectorBox.Text;
@@ -106,9 +108,13 @@ namespace Poprig.Pages
             if (ofdPicture.ShowDialog() == true)
             {
                 LogoBox.Source = new BitmapImage(new Uri(ofdPicture.FileName));
-                MyDB_41_Derbin_2Entities.GetContext().Agent.FirstOrDefault(p => p.ID != agent.ID).LogoPath = ofdPicture.FileName;
-                MyDB_41_Derbin_2Entities.GetContext().SaveChanges();
+                agent.AllPathLogo = ofdPicture.FileName;
             }
+        }
+
+        private void NavigateBack(object sender, RoutedEventArgs e)
+        {
+            MainWindow.FrameMainWindow.Content = new Pages.ListAgentPage();
         }
     }
 }
