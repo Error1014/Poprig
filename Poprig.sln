@@ -5,6 +5,8 @@ VisualStudioVersion = 17.1.32319.34
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Poprig", "Poprig\Poprig.csproj", "{65D9AD16-8430-4625-85C8-DDC8AA259A07}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WSUniversalLib.dll", "WSUniversalLib.dll\WSUniversalLib.dll.csproj", "{2F935BC7-B263-4807-81A9-121B112F0B2F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{65D9AD16-8430-4625-85C8-DDC8AA259A07}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{65D9AD16-8430-4625-85C8-DDC8AA259A07}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{65D9AD16-8430-4625-85C8-DDC8AA259A07}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2F935BC7-B263-4807-81A9-121B112F0B2F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2F935BC7-B263-4807-81A9-121B112F0B2F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2F935BC7-B263-4807-81A9-121B112F0B2F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2F935BC7-B263-4807-81A9-121B112F0B2F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
