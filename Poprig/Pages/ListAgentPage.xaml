@@ -77,12 +77,12 @@
         </ListView>
         <DockPanel Grid.Row="2" HorizontalAlignment="Right" Width="200" Margin="5">
             <TextBlock FontSize="20" VerticalAlignment="Center" HorizontalAlignment="Center" Foreground="#43DCFE">
-                <Run PreviewMouseLeftButtonDown="ClickNewList" Text="&lt;"/>
-                <Run x:Name="NumPage1" PreviewMouseLeftButtonDown="ClickNewList" Text="1" />
-                <Run x:Name="NumPage2" PreviewMouseLeftButtonDown="ClickNewList" Text="2" />
-                <Run x:Name="NumPage3" PreviewMouseLeftButtonDown="ClickNewList" Text="3" />
-                <Run x:Name="NumPage4" PreviewMouseLeftButtonDown="ClickNewList" Text="4" />
-                <Run PreviewMouseLeftButtonDown="ClickNewList" Text="&gt;" />
+                <Run PreviewMouseLeftButtonDown="NavigateListAgentArow" Text="&lt;"/>
+                <Run x:Name="NumPage1" PreviewMouseLeftButtonDown="NavigateListAgentNumb" Text="1" />
+                <Run x:Name="NumPage2" PreviewMouseLeftButtonDown="NavigateListAgentNumb" Text="2" />
+                <Run x:Name="NumPage3" PreviewMouseLeftButtonDown="NavigateListAgentNumb" Text="3" />
+                <Run x:Name="NumPage4" PreviewMouseLeftButtonDown="NavigateListAgentNumb" Text="4" />
+                <Run PreviewMouseLeftButtonDown="NavigateListAgentArow" Text="&gt;" />
             </TextBlock>
         </DockPanel>
     </Grid>

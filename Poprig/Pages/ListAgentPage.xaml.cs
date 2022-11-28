@@ -25,9 +25,14 @@ namespace Poprig.Pages
         private int valueAgentInPage = 10;
         private List<Agent> agents=new List<Agent>();
         private List<List<Agent>> listAgentForPages = new List<List<Agent>>();
+        List<Run> numerationPage = new List<Run>();
         public ListAgentPage()
         {
             InitializeComponent();
+            numerationPage.Add(NumPage1);
+            numerationPage.Add(NumPage2);
+            numerationPage.Add(NumPage3);
+            numerationPage.Add(NumPage4);
             var dataAgent = MyDB_41_Derbin_2Entities.GetContext().Agent.ToList();
             foreach (var item in dataAgent)
             {
@@ -46,7 +51,10 @@ namespace Poprig.Pages
             GetSkidka();
             GetPartList();
             ListViewAgent.ItemsSource = GetValueDataPage();
-            UpdateNumPagesNavigate();
+            //UpdateNumPagesNavigate();
+            UpdateSelectPage();
+
+
         }
         private void GetPartList()
         {
@@ -107,73 +115,65 @@ namespace Poprig.Pages
         }
 
 
-
-        private void ClickNewList(object sender, MouseButtonEventArgs e)
+        private void NavigateListAgentNumb(object sender, MouseButtonEventArgs e)
         {
-            Run run = sender as Run;
-            if (run.Text == "<")
+            string text = (sender as Run).Text;
+            int koef = numPages - int.Parse(text);
+            numPages -= koef;
+            UpdateSelectPage();
+        }
+        private void NavigateListAgentArow(object sender, MouseButtonEventArgs e)
+        {
+            string text = (sender as Run).Text;
+            if (text == "<")
             {
                 if (numPages > 1)
                 {
                     numPages--;
+                    if (int.Parse(numerationPage[0].Text) > 1)
+                    {
+                        foreach (var item in numerationPage)
+                        {
+                            item.Text = (int.Parse(item.Text) - 1).ToString();
+                        }
+                    }
+
                 }
             }
-            else if (run.Text == ">")
+            else
             {
                 if (numPages < valuePages)
                 {
                     numPages++;
+                    if (int.Parse(numerationPage[3].Text) < valuePages)
+                    {
+                        foreach (var item in numerationPage)
+                        {
+                            item.Text = (int.Parse(item.Text) + 1).ToString();
+                        }
+                    }
                 }
             }
-            else
-            {
-                numPages = int.Parse(run.Text);
-            }
-            ListViewAgent.ItemsSource = GetValueDataPage();
-            UpdateNumPagesNavigate();
+            UpdateSelectPage();
+
 
         }
 
-        private void UpdateNumPagesNavigate()
+        private void UpdateSelectPage()
         {
-            List<Run> runs = new List<Run>();
-            runs.Add(NumPage1);
-            runs.Add(NumPage2);
-            runs.Add(NumPage3);
-            runs.Add(NumPage4);
-            if (numPages +3 < valuePages)
+            foreach (var item in numerationPage)
             {
-                for (int i = 0; i < runs.Count; i++)
+                if (item.Text == numPages.ToString())
                 {
-                    runs[i].Text = (numPages+i).ToString();
-                    if (runs[i].Text==numPages.ToString())
-                    {
-                        runs[i].TextDecorations = TextDecorations.Underline;
-                    }
-                    else
-                    {
-                        runs[i].TextDecorations = null;
-                    }
+                    item.TextDecorations = TextDecorations.Underline;
+                }
+                else
+                {
+                    item.TextDecorations = null;
                 }
             }
-            else
-            {
-                for (int i = 0; i < runs.Count; i++)
-                {
-                    runs[i].Text = (valuePages -(3 - i)).ToString();
-                    if (runs[i].Text == numPages.ToString())
-                    {
-                        runs[i].TextDecorations = TextDecorations.Underline;
-                    }
-                    else
-                    {
-                        runs[i].TextDecorations = null;
-                    }
-                }
-            }
-
-
         }
+
 
         private void AddNewAgenr(object sender, RoutedEventArgs e)
         {
