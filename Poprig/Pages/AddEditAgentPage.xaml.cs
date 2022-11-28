@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.Win32;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -30,7 +31,11 @@ namespace Poprig.Pages
                 agent = SelectAgent;
                 ShowDataAgent();
                 isEdit = true;
+                TypeBox.SelectedIndex = (int)agent.TypeID - 1;
             }
+            TypeBox.SelectedValuePath = "ID";
+            TypeBox.DisplayMemberPath = "Title";
+            TypeBox.ItemsSource = MyDB_41_Derbin_2Entities.GetContext().TypeAgent.ToList();
         }
         private void ShowDataAgent()
         {
@@ -48,7 +53,7 @@ namespace Poprig.Pages
         {
             
             agent.Title = TitleBox.Text;
-            //agent.TypeAgent
+            agent.TypeID = (int)TypeBox.SelectedValue;
             //agent.Logo
             agent.Prioritet = PrioritetBox.Text == ""? 0: int.Parse(PrioritetBox.Text);
             agent.UrAdres = AdresBox.Text;
@@ -72,6 +77,7 @@ namespace Poprig.Pages
                 MessageBox.Show("Error");
             }
             MainWindow.FrameMainWindow.Content = new Pages.ListAgentPage();
+            //MainWindow.FrameMainWindow.Navigate(new Pages.ListAgentPage());
         }
         private void DeleteResult(object sender, RoutedEventArgs e)
         {
@@ -89,6 +95,20 @@ namespace Poprig.Pages
         {
             e.Handled = "0123456789 ,".IndexOf(e.Text) < 0;
         }
-    
+
+        private void AddLogo(object sender, RoutedEventArgs e)
+        {
+            OpenFileDialog ofdPicture = new OpenFileDialog();
+            ofdPicture.Filter =
+            "Image files|*.bmp;*.jpg;*.gif;*.png;*.tif|All files|*.*";
+            ofdPicture.FilterIndex = 1;
+
+            if (ofdPicture.ShowDialog() == true)
+            {
+                LogoBox.Source = new BitmapImage(new Uri(ofdPicture.FileName));
+                MyDB_41_Derbin_2Entities.GetContext().Agent.FirstOrDefault(p => p.ID != agent.ID).LogoPath = ofdPicture.FileName;
+                MyDB_41_Derbin_2Entities.GetContext().SaveChanges();
+            }
+        }
     }
 }

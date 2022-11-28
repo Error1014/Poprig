@@ -37,7 +37,7 @@ namespace Poprig.Pages
             ///Продажи за год
             foreach (var item in agents)
             {
-                item.LogoPath = "/Resources/AgentLogo/"+item.LogoPath;
+                item.AllPathLogo = "/Resources/AgentLogo/"+item.LogoPath;
                 int? d = MyDB_41_Derbin_2Entities.GetContext().Sales
                     .Where(x=>x.AgentID==item.ID /* && DateTime.UtcNow - x.Date.Value<TimeSpan.FromDays(365)*/)
                     .Sum(s=>s.Value);
