@@ -13,6 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
+
 namespace Poprig
 {
     /// <summary>
@@ -24,8 +25,17 @@ namespace Poprig
         public MainWindow()
         {
             InitializeComponent();
-            MainFrame.Content = new Pages.ListAgentPage();
             FrameMainWindow = MainFrame;
+            FrameMainWindow.Content = new Pages.ListAgentPage();
+        }
+
+        private void NavigateAgentPage(object sender, RoutedEventArgs e)
+        {
+            FrameMainWindow.Content = new Pages.ListAgentPage();
+        }
+        private void NavigateCalculatorPage(object sender, RoutedEventArgs e)
+        {
+            FrameMainWindow.Content = new Pages.CalculatorPage();
         }
     }
 }

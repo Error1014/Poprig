@@ -79,6 +79,9 @@
     <Compile Include="Pages\AddEditAgentPage.xaml.cs">
       <DependentUpon>AddEditAgentPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Pages\CalculatorPage.xaml.cs">
+      <DependentUpon>CalculatorPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Product.cs">
       <DependentUpon>BDModel.tt</DependentUpon>
     </Compile>
@@ -117,6 +120,10 @@
       <SubType>Code</SubType>
     </Compile>
     <Page Include="Pages\AddEditAgentPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\CalculatorPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -310,6 +317,12 @@
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\WSUniversalLib.dll\WSUniversalLib.dll.csproj">
+      <Project>{2f935bc7-b263-4807-81a9-121b112f0b2f}</Project>
+      <Name>WSUniversalLib.dll</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

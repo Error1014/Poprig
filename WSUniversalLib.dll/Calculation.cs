@@ -8,15 +8,17 @@ namespace WSUniversalLib.dll
 {
     public class Calculation
     {
+        
         public int GetQuantityForProduct(int productType, int materialType, int count, float width, float length)
         {
             float koefProduct = GetKoefProduct(productType);
             float koefMaterial = GetKoefMaterial(materialType);
             if (koefProduct == -1) return -1;
             if (koefMaterial == -1) return -1;
-            if (width>=0) return -1;
-            if (length >= 0) return -1;
-            float value = ((width * length) * koefProduct) + ((width * length) * koefProduct) * koefMaterial;
+            if (count<=0) return -1;
+            if (width<=0) return -1;
+            if (length <= 0) return -1;
+            float value = ((width * length) * koefProduct)*count + ((width * length) * koefProduct) * count * koefMaterial;
             value = value % 1 == 0 ? value : (value / 1 + 1);
             return (int)value;
         }
@@ -44,11 +46,11 @@ namespace WSUniversalLib.dll
         {
             if (materialType == 1)
             {
-                return 0.3f;
+                return 0.003f;
             }
             else if (materialType == 2)
             {
-                return 0.12f;
+                return 0.00012f;
             }
             else
             {

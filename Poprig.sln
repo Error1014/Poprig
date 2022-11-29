@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Poprig", "Poprig\Poprig.csp
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WSUniversalLib.dll", "WSUniversalLib.dll\WSUniversalLib.dll.csproj", "{2F935BC7-B263-4807-81A9-121B112F0B2F}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WSUniversalLib.dllTests", "WSUniversalLib.dllTests\WSUniversalLib.dllTests.csproj", "{D38014E2-6FBE-431F-967A-964D95A519D2}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{2F935BC7-B263-4807-81A9-121B112F0B2F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2F935BC7-B263-4807-81A9-121B112F0B2F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2F935BC7-B263-4807-81A9-121B112F0B2F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D38014E2-6FBE-431F-967A-964D95A519D2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D38014E2-6FBE-431F-967A-964D95A519D2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D38014E2-6FBE-431F-967A-964D95A519D2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D38014E2-6FBE-431F-967A-964D95A519D2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
