@@ -118,5 +118,6 @@ namespace Poprig.Pages
         {
             MainWindow.FrameMainWindow.Content = new Pages.ListAgentPage();
         }
+
     }
 }

@@ -42,7 +42,14 @@ namespace Poprig.Pages
             ///Продажи за год
             foreach (var item in agents)
             {
-                item.AllPathLogo = "/Resources/AgentLogo/"+item.LogoPath;
+                if (item.LogoPath!="")
+                {
+                    item.AllPathLogo = "/Resources/AgentLogo/" + item.LogoPath;
+                }
+                else
+                {
+                    item.AllPathLogo = "/Resources/picture.png";
+                }
                 int? d = MyDB_41_Derbin_2Entities.GetContext().Sales
                     .Where(x=>x.AgentID==item.ID /* && DateTime.UtcNow - x.Date.Value<TimeSpan.FromDays(365)*/)
                     .Sum(s=>s.Value);
@@ -172,6 +179,8 @@ namespace Poprig.Pages
                     item.TextDecorations = null;
                 }
             }
+            ListViewAgent.ItemsSource = GetValueDataPage();
+
         }
 
 

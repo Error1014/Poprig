@@ -15,7 +15,7 @@ namespace WSUniversalLib.dll.Tests
         public void Check_CorectData()
         {
             //Arrage
-            int expected = 114148;
+            int expected = 114147;
             //Act
             Calculation calc = new Calculation();
             int actual = calc.GetQuantityForProduct(3, 1, 15, 20, 45);

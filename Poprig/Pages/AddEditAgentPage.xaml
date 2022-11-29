@@ -35,7 +35,7 @@
             <TextBox x:Name="PrioritetBox" PreviewTextInput="TextInputInt"  Style="{StaticResource EnterData}" />
             <DockPanel Height="40">
                 <Image x:Name="LogoBox" Width="40" Source="/Resources/picture.png"/>
-                <Button Width="200" Content="Добавить фото" Click="AddLogo"/>
+                <Button Visibility="Collapsed" Width="200" Content="Добавить фото" Click="AddLogo"/>
             </DockPanel>
             <TextBox x:Name="AdresBox" Style="{StaticResource EnterData}" />
             <TextBox x:Name="INNBox" PreviewTextInput="TextInputInt" Style="{StaticResource EnterData}" />
