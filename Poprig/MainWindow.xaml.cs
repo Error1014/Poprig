@@ -26,12 +26,12 @@ namespace Poprig
         {
             InitializeComponent();
             FrameMainWindow = MainFrame;
-            FrameMainWindow.Content = new Pages.ListAgentPage();
+            FrameMainWindow.Content = new Pages.ListAgentPage(1);
         }
 
         private void NavigateAgentPage(object sender, RoutedEventArgs e)
         {
-            FrameMainWindow.Content = new Pages.ListAgentPage();
+            FrameMainWindow.Content = new Pages.ListAgentPage(1);
         }
         private void NavigateCalculatorPage(object sender, RoutedEventArgs e)
         {

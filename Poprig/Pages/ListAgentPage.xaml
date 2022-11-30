@@ -22,7 +22,7 @@
             <ComboBox Width="200" Margin="10">
 
             </ComboBox>
-            <Button Content="Добавить агента" Margin="10"  HorizontalAlignment="Right" MaxWidth="200" Background="#43DCFE" Click="AddNewAgenr"/>
+            <Button Content="Добавить агента" Margin="10"  HorizontalAlignment="Right" MaxWidth="200" Background="#43DCFE" Click="AddNewAgent"/>
         </DockPanel>
         <ListView x:Name="ListViewAgent" Grid.Row="1" ScrollViewer.HorizontalScrollBarVisibility="Disabled"  HorizontalAlignment="Center" Width="auto">
             <ListView.ItemsPanel>

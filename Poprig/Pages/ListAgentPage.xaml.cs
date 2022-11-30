@@ -25,9 +25,10 @@ namespace Poprig.Pages
         private int valueAgentInPage = 10;
         private List<Agent> agents=new List<Agent>();
         List<Run> numerationPage = new List<Run>();
-        public ListAgentPage()
+        public ListAgentPage(int numPage)
         {
             InitializeComponent();
+            numPages= numPage;
             numerationPage.Add(NumPage1);
             numerationPage.Add(NumPage2);
             numerationPage.Add(NumPage3);
@@ -170,14 +171,14 @@ namespace Poprig.Pages
         }
 
 
-        private void AddNewAgenr(object sender, RoutedEventArgs e)
+        private void AddNewAgent(object sender, RoutedEventArgs e)
         {
-            MainWindow.FrameMainWindow.Content = new Pages.AddEditAgentPage(null);
+            MainWindow.FrameMainWindow.Content = new Pages.AddEditAgentPage(null, numPages);
         }
 
         private void Grid_PreviewMouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
-            MainWindow.FrameMainWindow.Content = new Pages.AddEditAgentPage((sender as Grid).DataContext as Agent);
+            MainWindow.FrameMainWindow.Content = new Pages.AddEditAgentPage((sender as Grid).DataContext as Agent, numPages);
         }
 
         private void WriteText(object sender, TextCompositionEventArgs e)

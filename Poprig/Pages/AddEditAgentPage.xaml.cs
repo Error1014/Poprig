@@ -23,10 +23,12 @@ namespace Poprig.Pages
     public partial class AddEditAgentPage : Page
     {
         Agent agent = new Agent();
+        private int numPage = 1;
         private bool isEdit = false;
-        public AddEditAgentPage(Agent SelectAgent)
+        public AddEditAgentPage(Agent SelectAgent, int numPage)
         {
             InitializeComponent();
+            this.numPage=numPage;
             if (SelectAgent!=null)
             {
                 agent = SelectAgent;
@@ -79,7 +81,7 @@ namespace Poprig.Pages
             {
                 MessageBox.Show("Error");
             }
-            MainWindow.FrameMainWindow.Content = new Pages.ListAgentPage();
+            MainWindow.FrameMainWindow.Content = new Pages.ListAgentPage(numPage);
             //MainWindow.FrameMainWindow.Navigate(new Pages.ListAgentPage());
         }
         private void DeleteResult(object sender, RoutedEventArgs e)
@@ -90,7 +92,7 @@ namespace Poprig.Pages
                 MyDB_41_Derbin_2Entities.Context.Agent.Remove(agent);
             }
             MyDB_41_Derbin_2Entities.Context.SaveChanges();
-            MainWindow.FrameMainWindow.Content=new Pages.ListAgentPage();
+            MainWindow.FrameMainWindow.Content=new Pages.ListAgentPage(numPage);
 
         }
 
@@ -116,7 +118,7 @@ namespace Poprig.Pages
 
         private void NavigateBack(object sender, RoutedEventArgs e)
         {
-            MainWindow.FrameMainWindow.Content = new Pages.ListAgentPage();
+            MainWindow.FrameMainWindow.Content = new Pages.ListAgentPage(numPage);
         }
 
     }
