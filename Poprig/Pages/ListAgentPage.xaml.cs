@@ -24,7 +24,6 @@ namespace Poprig.Pages
         private int valuePages;
         private int valueAgentInPage = 10;
         private List<Agent> agents=new List<Agent>();
-        private List<List<Agent>> listAgentForPages = new List<List<Agent>>();
         List<Run> numerationPage = new List<Run>();
         public ListAgentPage()
         {
@@ -57,7 +56,6 @@ namespace Poprig.Pages
             }
             GetSkidka();
             GetPartList();
-            ListViewAgent.ItemsSource = GetValueDataPage();
             //UpdateNumPagesNavigate();
             UpdateSelectPage();
 
@@ -65,28 +63,16 @@ namespace Poprig.Pages
         }
         private void GetPartList()
         {
-            List<Agent> list = new List<Agent>();
+            List<Agent> agentsOnePage = new List<Agent>();
             int num = 0;
-            foreach (var item in agents)
+            for (int i = 0 + valueAgentInPage*(numPages-1); i < valueAgentInPage + valueAgentInPage * (numPages - 1); i++)
             {
-                if (num!=0 && num % valueAgentInPage==0)
+                if (i < agents.Count)
                 {
-                    listAgentForPages.Add(list);
-                    list = new List<Agent>();
-                }
-                list.Add(item);
-                num++;
-                if (num == agents.Count)
-                {
-                    listAgentForPages.Add(list);
+                    agentsOnePage.Add(agents[i]);
                 }
             }
-        }
-        private List<Agent> GetValueDataPage()
-        {
-            List<Agent> list = new List<Agent>();
-            list = listAgentForPages[numPages - 1];
-            return list;
+            ListViewAgent.ItemsSource = agentsOnePage;
         }
 
         private List<Agent> GetSkidka()
@@ -179,7 +165,7 @@ namespace Poprig.Pages
                     item.TextDecorations = null;
                 }
             }
-            ListViewAgent.ItemsSource = GetValueDataPage();
+            GetPartList();
 
         }
 
@@ -192,6 +178,11 @@ namespace Poprig.Pages
         private void Grid_PreviewMouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
             MainWindow.FrameMainWindow.Content = new Pages.AddEditAgentPage((sender as Grid).DataContext as Agent);
+        }
+
+        private void WriteText(object sender, TextCompositionEventArgs e)
+        {
+            string text = (sender as TextBox).Text;
         }
     }
 }
