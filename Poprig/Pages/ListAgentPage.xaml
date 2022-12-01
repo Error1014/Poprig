@@ -17,7 +17,8 @@
         <DockPanel>
             <TextBox Width="200" Height="50" VerticalContentAlignment="Center" TextInput="WriteText" HorizontalAlignment="Left" Margin="10" Text="Введите текст для поиска"/>
             <ComboBox Width="200" HorizontalAlignment="Center" Margin="10">
-                
+                <TextBlock Text="А-Я"/>
+                <TextBlock Text="Я-А"/>
             </ComboBox>
             <ComboBox Width="200" Margin="10">
 
@@ -32,7 +33,7 @@
             </ListView.ItemsPanel>
             <ListView.ItemTemplate>
                 <DataTemplate>
-                    <Grid MinHeight="100" Height="170" PreviewMouseLeftButtonDown="Grid_PreviewMouseLeftButtonDown">
+                    <Grid MinHeight="100" Height="170" Background="White" PreviewMouseLeftButtonDown="Grid_PreviewMouseLeftButtonDown">
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="170"/>
                             <ColumnDefinition Width="*"/>

@@ -38,10 +38,10 @@
                 <Button Visibility="Collapsed" Width="200" Content="Добавить фото" Click="AddLogo"/>
             </DockPanel>
             <TextBox x:Name="AdresBox" Style="{StaticResource EnterData}" />
-            <TextBox x:Name="INNBox" PreviewTextInput="TextInputInt" Style="{StaticResource EnterData}" />
-            <TextBox x:Name="KPPBox" PreviewTextInput="TextInputInt" Style="{StaticResource EnterData}" />
+            <TextBox x:Name="INNBox" PreviewTextInput="TextInputInt" Style="{StaticResource EnterData}" MaxLength="10"/>
+            <TextBox x:Name="KPPBox" PreviewTextInput="TextInputInt" Style="{StaticResource EnterData}" MaxLength="9"/>
             <TextBox x:Name="DirectorBox" Style="{StaticResource EnterData}" />
-            <TextBox x:Name="PhoneBox" PreviewTextInput="TextInputInt" Style="{StaticResource EnterData}" />
+            <TextBox x:Name="PhoneBox" PreviewTextInput="TextInputInt" Style="{StaticResource EnterData}" MaxLength="11"/>
             <TextBox x:Name="EmailBox" Style="{StaticResource EnterData}" />
         </StackPanel>
         <DockPanel Grid.Row="1" Grid.ColumnSpan="2" HorizontalAlignment="Center">

@@ -22,7 +22,7 @@ namespace Poprig.Pages
     /// </summary>
     public partial class AddEditAgentPage : Page
     {
-        Agent agent = new Agent();
+        Agent agent = null;
         private int numPage = 1;
         private bool isEdit = false;
         public AddEditAgentPage(Agent SelectAgent, int numPage)
@@ -39,6 +39,10 @@ namespace Poprig.Pages
             TypeBox.SelectedValuePath = "ID";
             TypeBox.DisplayMemberPath = "Title";
             TypeBox.ItemsSource = MyDB_41_Derbin_2Entities.GetContext().TypeAgent.ToList();
+            if (agent==null)
+            {
+                TypeBox.SelectedIndex = 0;
+            }
         }
         private void ShowDataAgent()
         {
@@ -56,10 +60,10 @@ namespace Poprig.Pages
         }
         private void SaveResult(object sender, RoutedEventArgs e)
         {
-            
+            agent = new Agent();
             agent.Title = TitleBox.Text;
             agent.TypeID = (int)TypeBox.SelectedValue;
-            agent.LogoPath = LogoBox.Source.ToString();
+            
             agent.Prioritet = PrioritetBox.Text == ""? 0: int.Parse(PrioritetBox.Text);
             agent.UrAdres = AdresBox.Text;
             agent.ContactPerson = DirectorBox.Text;
