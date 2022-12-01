@@ -86,7 +86,6 @@ namespace Poprig.Pages
                 MessageBox.Show("Error");
             }
             MainWindow.FrameMainWindow.Content = new Pages.ListAgentPage(numPage);
-            //MainWindow.FrameMainWindow.Navigate(new Pages.ListAgentPage());
         }
         private void DeleteResult(object sender, RoutedEventArgs e)
         {
@@ -99,7 +98,11 @@ namespace Poprig.Pages
             MainWindow.FrameMainWindow.Content=new Pages.ListAgentPage(numPage);
 
         }
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void TextInputInt(object sender, TextCompositionEventArgs e)
         {
             Regex regex = new Regex("[^0-9]+");

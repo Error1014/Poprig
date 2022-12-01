@@ -13,8 +13,8 @@ namespace WSUniversalLib.dll
         {
             float koefProduct = GetKoefProduct(productType);
             float koefMaterial = GetKoefMaterial(materialType);
-            if (koefProduct == -1) return -1;
-            if (koefMaterial == -1) return -1;
+            if (koefProduct == -1 || koefProduct==null) return -1;
+            if (koefMaterial == -1 || koefProduct == null) return -1;
             if (count<=0) return -1;
             if (width<=0) return -1;
             if (length <= 0) return -1;

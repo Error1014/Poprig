@@ -18,16 +18,16 @@
             <RowDefinition Height="14*"/>
         </Grid.RowDefinitions>
         <StackPanel Margin="10,10,10,10">
-            <TextBlock Style="{StaticResource EnterData}"  Text="Название"/>
-            <TextBlock Style="{StaticResource EnterData}"  Text="Тип агента"/>
-            <TextBlock Style="{StaticResource EnterData}"  Text="Приоритет"/>
-            <TextBlock Style="{StaticResource EnterData}"  Text="Логотип"/>
-            <TextBlock Style="{StaticResource EnterData}"  Text="Адрес"/>
-            <TextBlock Style="{StaticResource EnterData}"  Text="ИНН"/>
-            <TextBlock Style="{StaticResource EnterData}"  Text="КПП"/>
-            <TextBlock Style="{StaticResource EnterData}"  Text="Директор"/>
-            <TextBlock Style="{StaticResource EnterData}"  Text="Телефон"/>
-            <TextBlock Style="{StaticResource EnterData}"  Text="Email"/>
+            <TextBlock Style="{StaticResource EnterData}" Text="Название"/>
+            <TextBlock Style="{StaticResource EnterData}" Text="Тип агента"/>
+            <TextBlock Style="{StaticResource EnterData}" Text="Приоритет"/>
+            <TextBlock Style="{StaticResource EnterData}" Text="Логотип"/>
+            <TextBlock Style="{StaticResource EnterData}" Text="Адрес"/>
+            <TextBlock Style="{StaticResource EnterData}" Text="ИНН"/>
+            <TextBlock Style="{StaticResource EnterData}" Text="КПП"/>
+            <TextBlock Style="{StaticResource EnterData}" Text="Директор"/>
+            <TextBlock Style="{StaticResource EnterData}" Text="Телефон"/>
+            <TextBlock Style="{StaticResource EnterData}" Text="Email"/>
         </StackPanel>
         <StackPanel Grid.Column="1"  Margin="10,10,10,10">
             <TextBox x:Name="TitleBox" Style="{StaticResource EnterData}" />

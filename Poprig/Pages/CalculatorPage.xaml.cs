@@ -43,7 +43,14 @@ namespace Poprig.Pages
             GetEnterDate();
             Calculation calculat = new Calculation();
             int value = calculat.GetQuantityForProduct(productType, materialType, count, width, length);
-            MessageBox.Show("Необходимо "+value.ToString()+" единиц сырья");
+            if (value==-1)
+            {
+                MessageBox.Show("Вы ввели не верные данные, пожалуйста исправьте их");
+            }
+            else
+            {
+                MessageBox.Show("Необходимо " + value.ToString() + " единиц сырья");
+            }
         }
 
         private void GetEnterDate()
