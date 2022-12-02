@@ -38,7 +38,7 @@ namespace Poprig.Pages
             {
                 agents.Add(item);
             }
-            valuePages = agents.Count/ valueAgentInPage + (agents.Count% valueAgentInPage == 0 ? 0:1);//считаем количество страниц
+            valuePages = agents.Count/ valueAgentInPage + (agents.Count% valueAgentInPage == 0 ? 0:1);
             ///Продажи за год
             foreach (var item in agents)
             {
@@ -51,13 +51,12 @@ namespace Poprig.Pages
                     item.AllPathLogo = "/Resources/picture.png";
                 }
                 int? d = MyDB_41_Derbin_2Entities.GetContext().Sales
-                    .Where(x=>x.AgentID==item.ID /* && DateTime.UtcNow - x.Date.Value<TimeSpan.FromDays(365)*/)
+                    .Where(x=>x.AgentID==item.ID )
                     .Sum(s=>s.Value);
                 item.SalesOnYear = (int)(d == null ? 0 : d);
             }
             GetSkidka();
             GetPartList();
-            //UpdateNumPagesNavigate();
             UpdateSelectPage();
 
 
