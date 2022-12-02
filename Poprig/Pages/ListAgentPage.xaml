@@ -16,7 +16,7 @@
         </Grid.RowDefinitions>
         <DockPanel>
             <TextBox Width="200" Height="50" VerticalContentAlignment="Center" TextInput="WriteText" HorizontalAlignment="Left" Margin="10" Text="Введите текст для поиска"/>
-            <ComboBox Width="200" HorizontalAlignment="Center" Margin="10">
+            <ComboBox Width="200" HorizontalAlignment="Center" Margin="10" SelectionChanged="SortAgent">
                 <TextBlock Text="А-Я"/>
                 <TextBlock Text="Я-А"/>
             </ComboBox>

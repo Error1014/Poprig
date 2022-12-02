@@ -184,5 +184,31 @@ namespace Poprig.Pages
         {
             string text = (sender as TextBox).Text;
         }
+
+        /// <summary>
+        /// SelectedIndex == 0 => А-Я
+        /// SelectedIndex == 1 => Я-А
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void SortAgent(object sender, SelectionChangedEventArgs e)
+        {
+            int selectID = (sender as ComboBox).SelectedIndex;
+            var resultSort = agents.OrderBy(x => x.Title).ThenBy(x => x.ID);
+            if (selectID==0)
+            {
+                resultSort = agents.OrderBy(x => x.Title).ThenBy(x => x.Title);
+            }
+            else if(selectID==1)
+            {
+                resultSort = agents.OrderBy(x => x.Title).ThenByDescending(x => x.Title);
+            }
+            agents=new List<Agent>();
+            foreach (var item in resultSort)
+            {
+                agents.Add(item);
+            }
+            GetPartList();
+        }
     }
 }
