@@ -30,6 +30,8 @@ namespace Poprig.Pages
         public CalculatorPage()
         {
             InitializeComponent();
+            TypeProductBox.SelectedIndex = 0;
+            TypeMaterialBox.SelectedIndex = 0;
         }
 
         private void IntInput(object sender, TextCompositionEventArgs e)
